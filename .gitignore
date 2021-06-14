@@ -1,2 +1,8 @@
 .idea/
 venv/
+mitama/__pycache__/
+gui/__pycache__/
+tools/__pycache__/
+gameLib/__pycache__/
+explore/__pycache__/
+goryou/__pycache__/
