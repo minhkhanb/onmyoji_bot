@@ -578,7 +578,7 @@ def show_img(img):
 
 
 def main():
-    hwnd = win32gui.FindWindow(0, u'阴阳师-网易游戏')
+    hwnd = win32gui.FindWindow(0, u'Onmyoji')
     yys = GameControl(hwnd, 0)
     yys.debug()
 

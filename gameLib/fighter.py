@@ -42,9 +42,9 @@ class Fighter(GameScene):
         # 绑定窗口
         if hwnd == 0:
             if self.client == 0:
-                hwnd = win32gui.FindWindow(0, u'阴阳师-网易游戏')
+                hwnd = win32gui.FindWindow(0, u'Onmyoji')
             elif self.client == 1:
-                hwnd = win32gui.FindWindow(0, u'阴阳师 - MuMu模拟器')
+                hwnd = win32gui.FindWindow(0, u'Onmyoji')
                 # TansuoPos.InitPosWithClient__()
                 # YuhunPos.InitPosWithClient__()
         self.yys = GameControl(hwnd, quit_game_enable)
