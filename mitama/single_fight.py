@@ -48,11 +48,12 @@ class SingleFight(Fighter):
 
             # 检测是否打完
             state = self.check_end()
+            self.log.info('check end single fight: ' + state)
             mood2.moodsleep()
 
             # 在战斗结算页面
             self.get_reward(mood3, state)
-            self.log.info("回到选择界面")
+            self.log.info("Quay lại giao diện lựa chọn")
 
             # 检查游戏次数
             self.check_times()

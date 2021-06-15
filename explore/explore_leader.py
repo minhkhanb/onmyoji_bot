@@ -102,7 +102,7 @@ class ExploreLeader(ExploreFight):
                 self.get_reward(mood2, state)
 
             # 退出探索
-            self.log.info('结束本轮探索')
+            self.log.info('Kết thúc vòng khám phá này')
             # 点击退出探索
             self.click_until_multi('Nút thoát', 'img/QUE-REN.png', 'img/TAN-SUO.png', 'img/JUE-XING.png',
                                    pos=TansuoPos.quit_btn[0], pos_end=TansuoPos.quit_btn[1], step_time=0.5)

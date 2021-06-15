@@ -91,12 +91,12 @@ class GameScene():
             # 章节界面
             if scene == 4:
                 # 点击探索按钮
-                self.click_until('探索按钮', 'img/YING-BING.png',
+                self.click_until('Nút khám phá', 'img/YING-BING.png',
                                  *TansuoPos.tansuo_btn, 2)
                 # 递归
                 self.switch_to_scene(scene)
             elif scene in [5, 6, 7, 8]:
-                self.click_until('退出章节', 'img/JUE-XING.png',
+                self.click_until('Thoát chương', 'img/JUE-XING.png',
                                  *TansuoPos.quit_last_chapter, 2)
                 self.switch_to_scene(scene)
 

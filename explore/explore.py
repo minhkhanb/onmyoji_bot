@@ -187,10 +187,11 @@ class ExploreFight(Fighter):
             :return: 打完普通怪返回1；打完boss返回2；未找到经验怪返回-1；未找到经验怪和boss返回-2
         '''
         while self.run:
+            self.log.info('Explore run')
             mood1.moodsleep()
             # 查看是否进入探索界面
             self.yys.wait_game_img('img\\YING-BING.png')
-            self.log.info('Vào trang khám phá')
+            self.log.info('Bắt đầu thám hiểm')
 
             # 寻找经验怪，未找到则寻找boss，再未找到则退出
             fight_pos = self.find_exp_moster()
@@ -223,6 +224,7 @@ class ExploreFight(Fighter):
 
             # Kiểm tra xem nó đã xong chưa
             state = self.check_end()
+            self.log.info('Check end: ' + state)
             mood1.moodsleep()
 
             # Trên trang dàn xếp trận chiến
@@ -259,7 +261,7 @@ class ExploreFight(Fighter):
 
             # 退出探索
             self.switch_to_scene(3)
-            self.log.info('结束本轮探索')
+            self.log.info('Kết thúc vòng khám phá này')
             time.sleep(0.5)
 
             # 检查游戏次数

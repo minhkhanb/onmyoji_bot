@@ -216,7 +216,7 @@ class Fighter(GameScene):
         # 在指定时间内反复监测画面并点击
         start_time = time.time()
         while time.time()-start_time <= self.max_op_time and self.run:
-            # 点击指定位置
+            # Nhấp để chỉ định vị trí
             self.yys.mouse_click_bg(pos, pos_end)
             self.log.info('Bấm vào ' + tag)
             ut.mysleep(step_time*1000)
@@ -228,7 +228,7 @@ class Fighter(GameScene):
                 self.log.info('Bấm vào ' + tag + ' thành công')
                 return True
 
-        # 提醒玩家点击失败，并在5s后退出
+        # Nhắc người chơi không nhấp được và thoát ra sau 5 giây
         self.click_failed(tag)
 
     def click_until_multi(self, tag, *img_path, pos, pos_end=None, step_time=0.8):
