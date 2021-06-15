@@ -43,19 +43,19 @@ def init():
         # 御魂
         mode = conf.getint('DEFAULT', 'run_mode')
         if mode == 0:
-            # 单刷
+            # Single Player
             fight = SingleFight()
 
         elif mode == 1:
-            # 司机
+            # Captain
             fight = DriverFighter()
 
         elif mode == 2:
-            # 乘客
+            # Passenger
             fight = FighterPassenger()
 
         elif mode == 3:
-            # 双开
+            # Dual
             fight = DualFighter()
 
     elif section == 1:

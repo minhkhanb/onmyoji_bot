@@ -65,8 +65,8 @@ class Fighter(GameScene):
             task.start()
 
     def check_battle(self):
-        # 检测是否进入战斗
-        self.log.info('Kiểm tra xem có tham gia trận chiến hay không')
+        # Kiểm tra xem có tham gia trận chiến hay không
+        self.log.info('11Kiểm tra xem có tham gia trận chiến hay không')
         self.yys.wait_game_img('img\\ZI-DONG.png', self.max_win_time)
         self.log.info('Đã vào trận')
 

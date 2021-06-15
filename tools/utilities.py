@@ -31,7 +31,7 @@ class Mood:
             with open('delay.json', 'r') as f:
                 fileObject = f.read()
             jsObj = json.loads(fileObject)
-            logging.info('读取延迟配置文件成功')
+            logging.info('Đọc thành công tệp cấu hình trì hoãn')
             Mood.mymood = {
                 1: (jsObj['1'][0], jsObj['1'][1]),
                 2: (jsObj['2'][0], jsObj['2'][1]),

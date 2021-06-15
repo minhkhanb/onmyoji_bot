@@ -83,7 +83,7 @@ class GameControl():
                     return cv2.cvtColor(img, cv2.COLOR_BGRA2GRAY)
         except Exception:
             self.init_mem()
-            logging.warning('window_full_shot执行失败')
+            logging.warning('window_full_shot Thực thi không thành công')
             a = traceback.format_exc()
             logging.warning(a)
 
@@ -152,7 +152,7 @@ class GameControl():
                     if abs(r1-r2) <= tolerance and abs(g1-g2) <= tolerance and abs(b1-b2) <= tolerance:
                         return x+region[0][0], y+region[0][1]
                 except Exception:
-                    logging.warning('find_color执行失败')
+                    logging.warning('find_color Thực thi không thành công')
                     a = traceback.format_exc()
                     logging.warning(a)
                     return -1
@@ -277,7 +277,7 @@ class GameControl():
                 maxVal_list.append(maxVal)
                 maxLoc_list.append(maxLoc)
             except Exception:
-                logging.warning('find_multi_img执行失败')
+                logging.warning('find_multi_img Thực thi không thành công')
                 a = traceback.format_exc()
                 logging.warning(a)
                 maxVal_list.append(0)
@@ -399,8 +399,11 @@ class GameControl():
         """
         self.rejectbounty()
         start_time = time.time()
+        logging.info('D-time.time()-start_time: ' + str(time.time()-start_time))
         while time.time()-start_time <= max_time and self.run:
             maxVal, maxLoc = self.find_img(img_path)
+            logging.info('D- img_path: ' + str(img_path))
+            logging.info('D- maxVal: ' + str(maxVal))
             if maxVal > 0.9:
                 return maxLoc
             if max_time > 5:
@@ -550,7 +553,7 @@ class GameControl():
 
         # 分辨率
         self.img = self.window_full_shot()
-        logging.info('游戏分辨率：' + str(self.img.shape))
+        logging.info('Độ phân giải trò chơi：' + str(self.img.shape))
 
         while(1):
             # 点击范围标记
