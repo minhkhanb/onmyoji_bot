@@ -69,7 +69,7 @@ class ExploreLeader(ExploreFight):
                 elif result == 2:
                     break
                 else:
-                    self.log.info('移动至下一个场景')
+                    self.log.info('Chuyển sang cảnh tiếp theo')
                     self.next_scene()
                     i += 1
 
@@ -81,7 +81,7 @@ class ExploreLeader(ExploreFight):
                     fight_pos = self.yys.find_game_img('img/FIGHT.png')
                 # 攻击怪
                 self.yys.mouse_click_bg(fight_pos)
-                self.log.info('已进入战斗')
+                self.log.info('Tham gia trận chiến')
 
                 # 等待式神准备
                 self.yys.wait_game_img_knn('img/ZHUN-BEI.png', thread=30)
@@ -104,7 +104,7 @@ class ExploreLeader(ExploreFight):
             # 退出探索
             self.log.info('结束本轮探索')
             # 点击退出探索
-            self.click_until_multi('退出按钮', 'img/QUE-REN.png', 'img/TAN-SUO.png', 'img/JUE-XING.png',
+            self.click_until_multi('Nút thoát', 'img/QUE-REN.png', 'img/TAN-SUO.png', 'img/JUE-XING.png',
                                    pos=TansuoPos.quit_btn[0], pos_end=TansuoPos.quit_btn[1], step_time=0.5)
 
             # 点击确认

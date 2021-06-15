@@ -20,6 +20,8 @@ def init():
     conf = configparser.ConfigParser()
     # 读取配置文件
     conf.read('conf.ini', encoding="utf-8")
+    MyLog.mlogger.info('Onmyoji start')
+    MyLog.mlogger.warning('Onmyoji start')
 
     # 设置缩放
     # Query DPI Awareness (Windows 10 and 8)
@@ -112,6 +114,7 @@ if __name__ == "__main__":
             # 错误消息进日志
             sys.excepthook = my_excepthook
             logging.info('UAC pass')
+            logging.info('Debugging')
 
             # 设置战斗参数
             init()

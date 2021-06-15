@@ -6,3 +6,6 @@ tools/__pycache__/
 gameLib/__pycache__/
 explore/__pycache__/
 goryou/__pycache__/
+dist/
+build/
+img/screenshots/

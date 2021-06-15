@@ -15,6 +15,7 @@ class ExploreFight(Fighter):
             :param hwnd=0: 指定窗口句柄：0-否；其他-窗口句柄
             :param mode=0: 狗粮模式：0-正常模式，1-组队后排狗粮
         '''
+        logging.info(hwnd)
         Fighter.__init__(self, hwnd=hwnd)
 
         # 读取配置文件
@@ -189,7 +190,7 @@ class ExploreFight(Fighter):
             mood1.moodsleep()
             # 查看是否进入探索界面
             self.yys.wait_game_img('img\\YING-BING.png')
-            self.log.info('进入探索页面')
+            self.log.info('Vào trang khám phá')
 
             # 寻找经验怪，未找到则寻找boss，再未找到则退出
             fight_pos = self.find_exp_moster()
@@ -199,32 +200,32 @@ class ExploreFight(Fighter):
                     fight_pos = self.find_boss()
                     boss = True
                     if fight_pos == -1:
-                        self.log.info('未找到经验怪和boss')
+                        self.log.info('Không tìm thấy quái vật và trùm kinh nghiệm')
                         return -2
                 else:
-                    self.log.info('未找到经验怪')
+                    self.log.info('Không tìm thấy quái vật kinh nghiệm')
                     return -1
 
             # 攻击怪
-            self.click_until('怪', 'img/YING-BING.png', fight_pos, step_time=0.3, appear=False)
-            self.log.info('已进入战斗')
+            self.click_until('Chiến đấu', 'img/YING-BING.png', fight_pos, step_time=0.3, appear=False)
+            self.log.info('Tham gia trận chiến')
 
             # 等待式神准备
             self.yys.wait_game_img_knn('img\\ZHUN-BEI.png', thread=30)
-            self.log.info('式神准备完成')
+            self.log.info('Thức thần đã sẵn sàng')
 
             # 检查狗粮经验
             self.check_exp_full()
 
             # 点击准备，直到进入战斗
-            self.click_until_knn('准备按钮', 'img/ZHUN-BEI.png', *
+            self.click_until_knn('Nút sẵn sàng', 'img/ZHUN-BEI.png', *
                             TansuoPos.ready_btn, mood1.get1mood()/1000, False, 30)
 
-            # 检查是否打完
+            # Kiểm tra xem nó đã xong chưa
             state = self.check_end()
             mood1.moodsleep()
 
-            # 在战斗结算页面
+            # Trên trang dàn xếp trận chiến
             self.get_reward(mood2, state)
 
             # 返回结果
@@ -252,7 +253,7 @@ class ExploreFight(Fighter):
                 elif result == 2:
                     break
                 else:
-                    self.log.info('移动至下一个场景')
+                    self.log.info('Chuyển sang cảnh tiếp theo')
                     self.next_scene()
                     i += 1
 

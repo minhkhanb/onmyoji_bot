@@ -28,7 +28,7 @@ class GoryouFight(Fighter):
             self.yys.wait_game_img_knn('img\\TIAO-ZHAN.png',
                                        self.max_win_time, thread=20)
             mood1.moodsleep()
-            self.click_until_knn('挑战按钮', 'img\\TIAO-ZHAN.png',
+            self.click_until_knn('Nút thử thách', 'img\\TIAO-ZHAN.png',
                                  *YuhunPos.tiaozhan_btn, appear=False, thread=20)
 
             # 检测是否进入战斗

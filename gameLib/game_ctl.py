@@ -27,6 +27,7 @@ class GameControl():
         self.hwnd = hwnd
         self.quit_game_enable = quit_game_enable
         self.debug_enable = False
+        logging.info(str(self.hwnd))
         l1, t1, r1, b1 = win32gui.GetWindowRect(self.hwnd)
         #print(l1,t1, r1,b1)
         l2, t2, r2, b2 = win32gui.GetClientRect(self.hwnd)
@@ -201,10 +202,10 @@ class GameControl():
             res = cv2.matchTemplate(
                 img_src, img_template, cv2.TM_CCOEFF_NORMED)
             minVal, maxVal, minLoc, maxLoc = cv2.minMaxLoc(res)
-            # print(maxLoc)
+            #print(maxLoc)
             return maxVal, maxLoc
         except Exception:
-            logging.warning('find_img执行失败')
+            logging.warning('find_img Thực thi không thành công')
             a = traceback.format_exc()
             logging.warning(a)
             return 0, 0
@@ -235,10 +236,9 @@ class GameControl():
 
         try:
             maxLoc = match_img_knn(img_template, img_src, thread)
-            # print(maxLoc)
             return maxLoc
         except Exception:
-            logging.warning('find_img_knn执行失败')
+            logging.warning('find_img_knn Thực thi không thành công')
             a = traceback.format_exc()
             logging.warning(a)
             return -1
@@ -475,7 +475,7 @@ class GameControl():
             else:
                 os.system(
                     'adb shell am force-stop com.netease.onmyoji.netease_simulator')
-        logging.info('退出，最后显示已保存至/img/screenshots文件夹')
+        logging.info('Exit and finally show that it has been saved to /img/screenshots folder')
         sys.exit(0)
 
     def takescreenshot(self):
@@ -485,7 +485,7 @@ class GameControl():
         name = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
         img_src_path = 'img/screenshots/%s.png' %(name)
         self.window_full_shot(img_src_path)
-        logging.info('截图已保存至img/screenshots/%s.png' %(name))
+        logging.info('The screenshot has been saved to img/screenshots/%s.png' %(name))
 
     def rejectbounty(self):
         '''

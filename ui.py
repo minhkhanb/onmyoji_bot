@@ -11,7 +11,7 @@ import tkinter as tk
 
 
 def is_admin():
-    # UAC申请，获得管理员权限
+    # UAC is administrator
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
     except:
@@ -92,6 +92,7 @@ class MyBattle(Application):
         # os.system("onmyoji.exe")
 
     def stop_onmyoji(self):
+        logging.info('stop_onmyoji')
         os._exit(0)
 
 
@@ -119,7 +120,7 @@ if __name__ == "__main__":
 
             # 错误消息进日志
             sys.excepthook = my_excepthook
-            logging.info('获取管理员权限')
+            logging.info('Get Administrator')
 
             # Query DPI Awareness (Windows 10 and 8)
             awareness = ctypes.c_int()
