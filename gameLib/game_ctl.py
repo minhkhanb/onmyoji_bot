@@ -421,11 +421,15 @@ class GameControl():
             :param quit=True: 超时后是否退出
             :return: 成功返回坐标，失败返回False
         """
+        logging.info('MMMMMMMMMMMMMMMMMMMMM')
         self.rejectbounty()
         start_time = time.time()
+
+        logging.info('DDmaxtime: ' + str(max_time))
         while time.time()-start_time <= max_time and self.run:
             maxLoc = self.find_img_knn(img_path, thread=thread)
             if maxLoc != (0, 0):
+                logging.info('DDD maxLoc: %s', str(maxLoc))
                 return maxLoc
             if max_time > 5:
                 time.sleep(1)
@@ -493,6 +497,7 @@ class GameControl():
             :return: 拒绝成功返回True，其他情况返回False
         '''
         maxVal, maxLoc = self.find_img('img\\XUAN-SHANG.png')
+        logging.info('Dset reject bounty: ' + str(maxVal))
         if maxVal > 0.9:
             self.mouse_click_bg((757, 460))
             return True

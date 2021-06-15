@@ -209,7 +209,7 @@ class ExploreFight(Fighter):
 
             # 攻击怪
             self.click_until('Chiến đấu', 'img/YING-BING.png', fight_pos, step_time=0.3, appear=False)
-            self.log.info('Tham gia trận chiến')
+            self.log.info('111111Tham gia trận chiến')
 
             # 等待式神准备
             self.yys.wait_game_img_knn('img\\ZHUN-BEI.png', thread=30)
@@ -224,7 +224,7 @@ class ExploreFight(Fighter):
 
             # Kiểm tra xem nó đã xong chưa
             state = self.check_end()
-            self.log.info('Check end: ' + state)
+            self.log.info('Check end: ' + str(state))
             mood1.moodsleep()
 
             # Trên trang dàn xếp trận chiến
@@ -238,6 +238,7 @@ class ExploreFight(Fighter):
 
     def start(self):
         '''单人探索主循环'''
+        self.log.info('explore starting')
         mood1 = ut.Mood(3)
         mood2 = ut.Mood(3)
         while self.run:

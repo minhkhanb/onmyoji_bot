@@ -81,7 +81,7 @@ class ExploreLeader(ExploreFight):
                     fight_pos = self.yys.find_game_img('img/FIGHT.png')
                 # 攻击怪
                 self.yys.mouse_click_bg(fight_pos)
-                self.log.info('Tham gia trận chiến')
+                self.log.info('2222Tham gia trận chiến')
 
                 # 等待式神准备
                 self.yys.wait_game_img_knn('img/ZHUN-BEI.png', thread=30)

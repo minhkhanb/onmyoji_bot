@@ -14,6 +14,7 @@ class GoryouFight(Fighter):
 
     def start(self):
         '''单人战斗主循环'''
+        self.log.info('Startldldldldl...................')
         mood1 = ut.Mood()
         mood2 = ut.Mood()
         mood3 = ut.Mood(3)
